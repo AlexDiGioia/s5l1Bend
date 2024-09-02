@@ -20,6 +20,13 @@ public class Pizza {
     private String size; //standard o XL
     private List<Topping> toppings = new ArrayList<>();
 
+    public Pizza(String name, double basePrice, int baseCalories, String size) {
+        this.name = name;
+        this.basePrice = basePrice;
+        this.baseCalories = baseCalories;
+        this.size = size;
+    }
+
     public void addTopping(Topping topping) {
         this.toppings.add(topping);
     }
@@ -34,12 +41,12 @@ public class Pizza {
 
     @Override
     public String toString() {
-        StringBuilder pizzaDescription = new StringBuilder(size + " " + name + " (tomato, cheese");
+        StringBuilder pizzaDescription = new StringBuilder(size + " " + name + " (pomodoro, mozzarella");
         for (Topping topping : toppings) {
             pizzaDescription.append(", ").append(topping.getName());
         }
-        pizzaDescription.append(") - Calories: ").append(getTotalCalories())
-                .append(" - Price: €").append(getTotalPrice());
+        pizzaDescription.append(") - Calorie: ").append(getTotalCalories())
+                .append(" - Prezzo: €").append(getTotalPrice());
         return pizzaDescription.toString();
     }
 }
